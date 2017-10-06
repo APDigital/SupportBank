@@ -43,10 +43,23 @@ namespace SupportBank
                 //string listAccount = getListAccount();
 
                 //Console.WriteLine(listAccount);
-                foreach (var account in accounts.Values)
+                Console.WriteLine("do you want to view a list of All or Transactions? please enter all/transaction ");
+                string userInput = Console.ReadLine();
+                if (userInput == "all")
                 {
-                    Console.WriteLine(account.ToString());
+                    foreach (var account in accounts.Values)
+                    {
+                        Console.WriteLine(account.ToString());
+                    }
                 }
+                else
+                {
+                    foreach (var transaction in transactions)
+                    {
+                        Console.WriteLine(transaction.ToString());
+                    }
+                }
+
                 Console.ReadLine();
 
 
@@ -58,7 +71,7 @@ namespace SupportBank
                 //        foreach (var record in records)
                 //        {
                 //            Account account = new Account(record);
-                            
+
                 //            data.Add(string.Format("Transaction:{0} | Date:{1} | Narrative:{2}", printTransaction, record.Date, record.Narrative));
 
                 //        }
